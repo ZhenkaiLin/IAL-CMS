@@ -5,9 +5,6 @@ The code will be released if our work is accepted by AAAI 2024.
 Our proposed method achieve SOTA sound separation results in MUSIC and VGGSound instruments subset.
 <div align="center">
 <img src="Pictures/MUSIC.png" align=center>
-</div>
-
-<div align="center">
 <img src="Pictures/VGGSound.png" align=center>
 </div>
 
