@@ -1,7 +1,7 @@
 # Independency-Adversarial-Learning-for-Cross-modal-Sound-Separation
-<div  align="center">    
-![avatar](Pictures/MUSIC.png)
-</div>
+
+<img src="(Pictures/MUSIC.png" align=center>
+
 
 ![avatar](Pictures/VGGSound.png)
 ![avatar](Pictures/Visualization.png)
