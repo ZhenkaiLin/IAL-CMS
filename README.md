@@ -6,7 +6,7 @@ Our proposed method achieve SOTA sound separation results in MUSIC and VGGSound 
 <div align="center">
 <table><tr>
 <td><img src="Pictures/MUSIC.png" align=center></td>
-<td><img src="Pictures/VGGSound.png" align=center></td>
+<td><img src="Pictures/VGGSound.png" align=center ></td>
 </tr></table>
 </div>
 
