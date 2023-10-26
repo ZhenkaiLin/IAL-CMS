@@ -10,7 +10,7 @@ Our proposed method achieve SOTA sound separation results in MUSIC and VGGSound 
 </tr></table>
 </div>
 
-# Sound Separation Visulization
+# Sound Separation Visualization
 We visualize the separation results compared with [Co-Separation](https://github.com/rhgao/co-separation/tree/master).
 <div align="center">
 <img src="Pictures/Visualization.png" align=center>
