@@ -1,5 +1,5 @@
 # Independency-Adversarial-Learning-for-Cross-modal-Sound-Separation
-The code will be released if our work is accepted by AAAI 2024.
+The codebase is under construction.
 
 # Compared with SOTA
 Our proposed method achieve SOTA sound separation results in MUSIC and VGGSound instruments subset.
