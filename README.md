@@ -1,7 +1,7 @@
 # Independency-Adversarial-Learning-for-Cross-modal-Sound-Separation
 The codebase is under construction, but all the core codes are already here.
 
-# Unsupervised Training and Testing on MUSIC
+### Unsupervised training and testing
 Use the following command to train your IAL-CMS model solely using multi-source videos:
 ```
 python main.py --batch_size 8 --num_workers 4 --gpus 0 --num_sanity_val_steps 2 --max_epochs -1 --vis_root Visualization/SyntheticDuet/IAL-CMS --n_visualize 800 --train_dataset SyntheticDuet --algorithm IAL-CMS --lmconfig config/lm/IAL-CMS/AdaversarialTraining/GeometricGANwAVC.yaml --lambda_independence_incresing_step 8000 16000 24000 --lambda_avc_incresing_step 4000 8000 12000 
@@ -11,7 +11,7 @@ Use the following command to evaluate the unsupervised separation performance:
 python main.py --test "1" --checkpoint path_2_checkpoint  --batch_size 8 --num_workers 4 --gpus 0 --num_sanity_val_steps 2 --max_epochs -1 --vis_root Visualization/Test/SyntheticDuet/IAL-CMS --n_visualize 800 --train_dataset SyntheticDuet --algorithm IAL-CMS --lmconfig config/lm/IAL-CMS/AdaversarialTraining/GeometricGANwAVC.yaml
 ```
 
-# Supervised Training and Testing on MUSIC
+### Supervised training and testing
 Use the following command to train your IAL-CMS model using solo videos:
 ```
 python main.py --batch_size 8 --num_workers 4 --gpus 0 --num_sanity_val_steps 2 --max_epochs -1 --vis_root Visualization/MUSIC-Solo/IAL-CMS --n_visualize 800 --train_dataset MUSIC-Solo --algorithm IAL-CMS --lmconfig config/lm/IAL-CMS/OnlySep/OnlySep_Spatial_Channel_AdaIN.yaml  --lambda_avc_incresing_step 4000 8000 12000 
