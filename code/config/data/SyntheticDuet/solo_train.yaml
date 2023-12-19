@@ -1,0 +1,10 @@
+####base####
+max_object: 1
+num_mix: 2
+audLen: 65535
+sr: 11025
+seed: 0
+
+solo_csv: ./DataModule/SyntheticDuet/indicators/train_solo_clip.csv
+dup_times: 10
+

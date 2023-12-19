@@ -1,0 +1,105 @@
+# modify every exp
+exp_name:  SyntheticDuet_GeoGAN-C-1_LatePair-SpectralNorm_C-1_NCritics-3_LossType-wav_LambdaInd-0.01_wAVC-0.05
+optimizer:
+  critics:
+    lr: 0.0001
+    b1: 0
+    b2: 0.9
+    weight_decay: 0.001
+  av_separator:
+    v_lr: 0.001
+    a_lr: 0.0001
+
+    algorithm: Adam
+    b1: 0.9
+    b2: 0.999
+    weight_decay: 0
+
+    lr_adjust_strategy: no
+
+model:
+  av_separator:
+    visual_net:
+      deeplab:
+        freeze: yes
+        aspp:
+          dilations: [ 1,3,6,9 ]
+          out_dim: 512
+        shallow:
+          layer: 3
+          reduced_dim: 48
+        decoder:
+          num: 1
+          out_dim: 512
+      common_space_mlp:
+        hidden_layer: 1
+        out_dim: 512
+
+    av_module:
+      a_in_dim: 512
+      src_f_dim: 512
+      max_source: 1
+      a_common_mlp:
+        hidden_layer: 1
+        hidden_dim: 512
+        out_dim: 512
+      v_in_dim: 512
+
+      attention: channel-wise attention #"qkv""channel-wise attention"
+      sigmoid: params
+      channel_attention: yes
+      spatial_attention: yes
+
+    separate_net:
+      n_fft: 1022
+      hop_length: 256
+      sr: 11025
+      mel_dim: 256
+      mask: IRM
+      IRM_bias: yes
+      use_av_module: yes
+      dense_visual_guidance: AdaIN
+
+    normalization: batchnorm
+
+    loss:
+      lambda_avc: 0.05
+
+      sep_loss_opt:
+        sep_loss_type: wav
+        max_sisnr: 30
+
+      avc_contrastive:
+        contrasted_feature: fusion
+        t: 0.3
+        hard_sampling:
+          discard_K: 6
+        positive_weight:
+          turn_on: no
+          t: 1
+        dropout: 0
+
+  critics:
+    gan_train_algorithm_type: GeoGAN #(WGAN-gp,WGAN,SNGAN,MMD-GAN,GeoGAN)
+    gan_train_algorithm:
+      C: 1
+      lambda_gp: 0
+      asymmetric: no
+    critics_model_type: pairtime-late #(pairtime-early,pairtime-late,pair-distance)
+    critics_model:
+      input_f_dim: 256
+      input_t_dim: 256
+      ndf: 64
+      n_extra_layers: 0
+      use_memory_bank: yes
+      bank_size: 1000
+      sample_2_from_bank: no
+      normalization: spectralnorm
+
+train_critics: yes
+train_critics_interval: 1
+train_generator_interval: 3
+
+lambda_ind: 0.01
+
+volumn_normalize: no

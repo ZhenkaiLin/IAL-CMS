@@ -1,0 +1,10 @@
+####base####
+max_object: 1
+num_mix: 2
+audLen: 110250
+sr: 11025
+seed: 0
+
+solo_csv: ./DataModule/SyntheticDuet/indicators/seen_heard_test.csv
+sample_times_per_video_pair: 10
+train_dataset: SyntheticDuet
