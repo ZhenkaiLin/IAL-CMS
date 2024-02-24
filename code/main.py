@@ -4,7 +4,7 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from utils.fixedTqdm import LitProgressBar
 from DataModule.SyntheticDuet.LightiningDataModule import SyntheticDuetDataModule
 
-#模型和测试没准备
+
 from LightningModule.AdversarialTrainLightingModule import AdversarialTrainLM
 from options.options import Options
 import sys
